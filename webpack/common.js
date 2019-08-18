@@ -21,7 +21,7 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'My app',
+    title: 'Todo List App',
     template: join(paths.src, 'html', 'template.html')
   },
 
@@ -40,19 +40,25 @@ module.exports = {
   jsLoader: {
     test: /\.js$/,
     include: paths.src,
-    use: ['react-hot-loader/webpack', {
-      loader: 'babel-loader',
-      options: {
-        presets: [['env', { modules: false }], 'stage-0', 'react'],
-        plugins: [
-          ['transform-runtime', {
-            helpers: false,
-            polyfill: false,
-            regenerator: true
-          }]
-        ]
+    use: [
+      'react-hot-loader/webpack',
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: [['env', { modules: false }], 'stage-0', 'react'],
+          plugins: [
+            [
+              'transform-runtime',
+              {
+                helpers: false,
+                polyfill: false,
+                regenerator: true
+              }
+            ]
+          ]
+        }
       }
-    }]
+    ]
   },
 
   cssLoader: {

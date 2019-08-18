@@ -19,12 +19,12 @@
 - Clone this repository: `git clone git@github.com:rafaelsevla/todo-list-app.git`;
 - Remove `.git` directory;
 - Install dependencies: `yarn` (or `npm i`);
-- Run `yarn dev` (or `npm dev`) to develop on `http://localhost:3000`
+- Run `yarn start` (or `npm start`) to develop on `http://localhost:3000`
 - Run `yarn build` (or `npm run build`) for production build (files will be generated on `dist` directory)
 
 ## Scripts
 
-- `yarn dev (or npm dev)`: Starts the application
+- `yarn start (or npm start)`: Starts the application
 - `yarn test (or npm test)`: Run tests once
 - `yarn test:watch (or npm run test:watch)`: Run tests in watch mode
 - `yarn build (or npm run build)`: Build project to production
