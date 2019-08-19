@@ -3,8 +3,8 @@
 import visibilityFilter, { initialState } from './index'
 import { expect } from 'chai'
 import deepFreeze from 'deep-freeze'
-import { 
-  SET_VISIBILITY_FILTER, 
+import {
+  SET_VISIBILITY_FILTER,
   SHOW_ALL,
   SHOW_COMPLETED,
   SHOW_ACTIVE

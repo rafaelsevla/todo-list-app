@@ -1,6 +1,6 @@
 ## What's inside it?
 
-1. Webpack 2;
+1. Webpack;
 
 - Babel;
 - React hot loader;
