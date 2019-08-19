@@ -1,9 +1,14 @@
 'use strict'
 
-import { ADD_TODO } from './actions'
+import * as actions from './actions'
 import { v4 } from 'uuid'
 
-export const addTodo = (text) => ({
-  type: ADD_TODO,
+export const addTodo = text => ({
+  type: actions.ADD_TODO,
   payload: { id: v4(), text }
+})
+
+export const toggleTodo = id => ({
+  type: actions.TOGGLE_TODO,
+  payload: { id }
 })
