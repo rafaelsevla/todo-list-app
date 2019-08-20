@@ -9,6 +9,7 @@
 - Storybook to create isolatelly components' stories
 - Async/await
 - Webpack tree shaking!
+- Redux!
 
 ## Dependencies:
 
