@@ -1,12 +1,12 @@
-'use strict';
+'use strict'
 
-import React from 'react';
+import React from 'react'
 
 const FilterLink = ({ action, activeFilter, children, onClick }) => {
-  const span = { tag: 'span' };
-  const a = { tag: 'a', href: '#', onClick };
+  const span = { tag: 'span' }
+  const a = { tag: 'a', href: '#', onClick }
 
-  const Component = action === activeFilter ? span : a;
+  const Component = action === activeFilter ? span : a
 
   return (
     <Component.tag
@@ -16,7 +16,7 @@ const FilterLink = ({ action, activeFilter, children, onClick }) => {
     >
       {children}
     </Component.tag>
-  );
-};
+  )
+}
 
-export default FilterLink;
+export default FilterLink
