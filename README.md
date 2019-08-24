@@ -10,6 +10,7 @@
 - Async/await
 - Webpack tree shaking!
 - Redux!
+- Milligram minimal setup of styles!
 
 ## Dependencies:
 

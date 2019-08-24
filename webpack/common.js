@@ -1,13 +1,13 @@
-'use strict';
+'use strict'
 
-const { join } = require('path');
+const { join } = require('path')
 
 const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
   dist: join(__dirname, '..', 'dist'),
   modules: join(__dirname, '..', 'node_modules')
-};
+}
 
 module.exports = {
   paths,
@@ -99,4 +99,4 @@ module.exports = {
       reducers: join(paths.src, 'redux-flow', 'reducers')
     }
   }
-};
+}
