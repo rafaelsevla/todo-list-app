@@ -1,16 +1,25 @@
-'use strict'
+'use strict';
 
-import React from 'react'
-import Form from 'components/form'
-import TodosList from 'components/todos-list'
-import Filter from 'components/filter'
+import React from 'react';
+import Form from 'components/form';
+import TodosList from 'components/todos-list';
+import Filter from 'components/filter';
+import SearchCep from 'components/search-cep';
+
+import 'milligram';
 
 const App = () => (
-  <div>
-    <Form />
-    <TodosList />
-    <Filter />
-  </div>
-)
+  <div style={{ display: 'flex', justifyContent: 'space-around', padding: 30 }}>
+    <div>
+      <Form />
+      <TodosList />
+      <Filter />
+    </div>
 
-export default(App)
+    <div>
+      <SearchCep />
+    </div>
+  </div>
+);
+
+export default App;
