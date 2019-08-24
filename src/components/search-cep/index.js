@@ -1,17 +1,13 @@
 'use strict'
 
 import React, { PureComponent } from 'react'
-import SearchCep from './search-cep'
+import { connect } from 'react-redux'
 import ajax from '@fdaciuk/ajax'
+import SearchCep from './search-cep'
+import { updateAddress } from 'reducers/address/action-creators'
 
 class SearchCepContainer extends PureComponent {
   state = {
-    address: '',
-    city: '',
-    code: '',
-    district: '',
-    state: '',
-    status: 1,
     isFetching: false
   }
 
@@ -24,15 +20,29 @@ class SearchCepContainer extends PureComponent {
       `http://apps.widenet.com.br/busca-cep/api/cep.json?code=${cep}`
     )
 
-    setTimeout(() => {
-      this.setState({ isFetching: false })
-      this.setState(response)
-    }, 5000)
+    this.setState({ isFetching: false })
+    this.props.updateAddress(response)
   }
 
   render() {
-    return <SearchCep {...this.state} handleSubmit={this.handleSubmit} />
+    console.log(this.props)
+    return (
+      <SearchCep
+        {...this.state}
+        {...this.props.address}
+        handleSubmit={this.handleSubmit}
+      />
+    )
   }
 }
 
-export default SearchCepContainer
+const mapStateToProps = state => ({
+  address: state.address
+})
+
+const mapDispatchToProps = { updateAddress }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchCepContainer)
