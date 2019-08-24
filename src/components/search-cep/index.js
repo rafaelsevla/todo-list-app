@@ -11,16 +11,23 @@ class SearchCepContainer extends PureComponent {
     code: '',
     district: '',
     state: '',
-    status: 1
+    status: 1,
+    isFetching: false
   }
 
   handleSubmit = async e => {
     e.preventDefault()
+    this.setState({ isFetching: true })
+
     const cep = e.target.cep.value
     const response = await ajax().get(
       `http://apps.widenet.com.br/busca-cep/api/cep.json?code=${cep}`
     )
-    this.setState(response)
+
+    setTimeout(() => {
+      this.setState({ isFetching: false })
+      this.setState(response)
+    }, 5000)
   }
 
   render() {
