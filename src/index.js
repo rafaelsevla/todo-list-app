@@ -8,9 +8,32 @@ import { Provider } from 'react-redux'
 import App from './app'
 import reducer from 'reducers'
 
-const store = createStore(reducer)
+const initialState = {
+  todos: [
+    {
+      text: 'auto',
+      id: '123',
+      completed: false
+    }
+  ],
+  address: {
+    address: 'rua do batman',
+    city: 'Gotham',
+    state: 'DC',
+    code: '080180101',
+    district: 'Waynes',
+    status: 1
+  }
+}
 
-const renderApp = (NextApp) => {
+const store = createStore(reducer, initialState)
+const renderState = () => {
+  console.log('state', store.getState())
+}
+store.subscribe(renderState)
+renderState()
+
+const renderApp = NextApp => {
   render(
     <AppContainer>
       <Provider store={store}>
