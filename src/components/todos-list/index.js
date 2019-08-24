@@ -8,9 +8,9 @@ import * as filterActions from 'reducers/visibility-filter/actions'
 const TodosList = ({ todos, activeFilter, handleToggleTodo }) => {
   return (
     <ul>
-      {getVisibleTodos(todos, activeFilter).map(todo => (
+      {getVisibleTodos(todos, activeFilter).map((todo, index) => (
         <li
-          key={todo.id}
+          key={index}
           style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
           onClick={handleToggleTodo(todo.id)}
         >
